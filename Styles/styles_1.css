@@ -1,0 +1,52 @@
+.btn_blue {
+-webkit-border-radius: 20px;
+-moz-border-radius: 20px;
+border-radius: 20px;
+color: #FFFFFF;
+font-family: Open Sans;
+font-size: 40px;
+font-weight: 100;
+padding: 40px;
+background-color: #2E70BA;
+box-shadow: 1px 1px 20px 0px #000000;
+-webkit-box-shadow: 1px 1px 20px 0px #000000;
+-moz-box-shadow: 1px 1px 20px 0px #000000;
+text-shadow: 1px 1px 20px #000000;
+text-decoration: none;
+display: inline-block;
+cursor: pointer;
+}
+
+.btn_blue:hover {
+background: #3D94F6;
+text-decoration: none;
+
+}
+
+.footer {
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+background-color:  #E9ECEF;
+color: red;
+text-align: center;
+}
+
+.nav >li >a:active{
+	background-color: red;
+}	
+ .nav > li > a:hover,
+ .nav > li > a:focus {
+    text-decoration: none;
+    color:green;
+    background-color: silver; /*Change rollover cell color here*/
+  }
+.center_fix{
+	
+	color:red;
+	text-align: justify;
+  	margin: 0 auto;
+ 	width: 25%;
+
+}

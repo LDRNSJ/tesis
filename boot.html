@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+  
+      <head>
+        
+        <title>Extreme Mind</title>
+
+        
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+        <link href="Styles/styles_1.css" rel="stylesheet" type="text/css">
+        
+
+
+      </head>
+
+      <script>
+          function includeHTML() {
+            var z, i, elmnt, file, xhttp;
+            /*loop through a collection of all HTML elements:*/
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+              elmnt = z[i];
+              /*search for elements with a certain atrribute:*/
+              file = elmnt.getAttribute("importer");
+              if (file) {
+                /*make an HTTP request using the attribute value as the file name:*/
+                xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                  if (this.readyState == 4) {
+                    if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                    if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                    /*remove the attribute, and call this function once more:*/
+                    elmnt.removeAttribute("importer");
+                    includeHTML();
+                  }
+                }      
+                xhttp.open("GET", file, true);
+                xhttp.send();
+                /*exit the function:*/
+                return;
+              }
+            }
+          };
+      </script>
+
+
+      <body>
+            <ul class="nav nav-tabs justify-content-center bg-light" >
+                  <a class="navbar-brand" href="boot.html"> 
+                  <img src="Images/em logo.png" width="40" height="30" alt="">
+                  Extreme Mind</a>
+
+                  <li class="nav-item">
+                    <a class="nav-link active" href="boot.html"  aria-controls="home" aria-selected="true">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="about-tab" data-toggle="tab" href="#about" role="tab" aria-controls="about" aria-selected="false">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="false"  >Login</a>
+                  </li><li class="nav-item">
+                    <a class="nav-link" id="signup-tab" data-toggle="tab" href="#signup" role="tab" aria-controls="signup" aria-selected="false" >Sign Up</a>
+                  </li>
+            </ul>
+            <div class="jumbotron text-center bg-light">
+              <h1>Extreme Mind</h1>
+              
+              <p>Beta Page</p> 
+            </div>
+              
+<div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+              <div class="center_fix">
+                  <p text-align: justify; text-align-last: center;>
+                  <h2>
+                    Step 1: Suscribe and Sign Up <br> 
+                    Step 2: Verify Email <br>
+                    Step 3: Download Game <br> 
+                    Step 4: Install Game <br>
+                    Step 5: Enjoy.
+                  </h2>
+                  </p>
+                  <br>  
+                  <button onclick="Login.php" class="btn_blue"> Login </button> 
+                  <button onclick="signup.php" class="btn_blue">Sign up</button>  
+                
+              </div>
+      </div>
+
+
+      <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        
+
+
+      </div>
+
+
+      <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+
+        <p>
+          <center>
+        Univerity: IUTAV <br>
+        Editor: Alejandro Serrano<br>
+        Contact Number: +584143055032<br>
+        Email: alejoo1894@gmail.com
+          </center>
+        </p>
+
+
+      </div>
+
+      <div class="tab-pane fade" id="about" role="tabpanel" aria-labelledby="about-tab">
+        <p>
+          <CENTER>
+        This site was made in HTML5, CSS, BootStrap, MYSQLSERVER.<BR>
+        The game was develop on Unity 2018.1 Released on April 1st.<BR>
+        The complement, action and functions for Unity was develop on C#<BR>
+        Images on Photoshop CC 2018 19.1.2<BR>
+        Modeling of characters Zbrush 2018 4R8
+          </CENTER>
+        </p>
+
+
+      </div>
+
+      <div class="tab-pane fade" id="login" role="tabpanel" aria-labelledby="login-tab">
+        <div importer="login.php"></div> 
+            <script>
+              includeHTML();
+            </script>
+      </div>
+
+      <div class="tab-pane fade" id="signup" role="tabpanel" aria-labelledby="signup-tab">
+        <div importer="signup.php"></div> 
+            <script>
+              includeHTML();
+            </script>
+      </div>
+
+
+
+
+
+  </div>
+            <div class="footer">
+                        <p> &#169;Copyrights. Caracas, Venezuela.<br> Alejandro Serrano </p>
+            </div>
+      </body>
+</html>
